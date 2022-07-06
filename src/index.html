@@ -4,20 +4,51 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>NcToCanvas</title>
   </head>
   <link rel="stylesheet" href="./css/index.css" />
   <body>
-    <input id="input" type="file" />
-    <textarea
-      rows="14"
-      cols="25"
-      disabled
-      placeholder="NC代码"
-      id="txt"
-    ></textarea>
-    <div id="executeButton">执行</div>
-    <canvas id="drawing" width="500" height="500"></canvas>
+    <div class="container">
+      <div class="left">
+        <div class="file">
+          <label class="input-file-button" for="input"> 选择文件 </label>
+          <input type="file" id="input" />
+          <textarea
+            rows="14"
+            cols="25"
+            disabled
+            placeholder="NC代码"
+            id="txt"
+          ></textarea>
+        </div>
+        <div class="info">
+          <div class="direction">
+            <div id="dire">坐标</div>
+            <div id="X">X: 0</div>
+            <div id="Y">Y: 0</div>
+            <div id="Z">Z: 0</div>
+          </div>
+          <div class="step">
+            <div id="stepName">步进电机</div>
+            <div class="stepXY">
+              <div id="xStep">
+                X轴步进电机控制: <span id="xStepContent">stop</span>
+              </div>
+              <div id="yStep">
+                Y轴步进电机控制: <span id="yStepContent">stop</span>
+              </div>
+            </div>
+          </div>
+          <div id="run">主轴: 关</div>
+          <div id="cold">冷却液: 关</div>
+          <div id="speed">进给速度: 0</div>
+        </div>
+      </div>
+      <div class="right">
+        <div id="executeButton">执行</div>
+        <canvas id="drawing" width="450" height="450"></canvas>
+      </div>
+    </div>
   </body>
   <!-- canvas逻辑 -->
   <script src="./js/index.js" type="module"></script>

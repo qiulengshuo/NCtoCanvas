@@ -3,8 +3,9 @@ const { app, BrowserWindow } = require('electron')
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 600
+    width: 800,         //设置窗口宽高
+    height: 600,
+    useContentSize: true
   })
   // 加载页面
   win.loadFile('./src/index.html')
